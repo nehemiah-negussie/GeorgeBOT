@@ -1,2 +1,2 @@
 # GeorgeBOT
-custom discord bot for guessing pokemon
+A discord bot for almighty discord server, just for fun and sometimes guesses pokemon.
