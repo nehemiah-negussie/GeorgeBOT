@@ -14,14 +14,37 @@ bot.on('message', (message) => {
   if (message.author.id == 716390085896962058){
     // if message has embed
     if (message.embeds[0]){
+      var command = ["p!h", message.channel.id]
+      
       var title = message.embeds[0].title
       // check for spawning
       if (title == "A wild pokémon has appeared!"){
         message.channel.send("Try sending p!h to get pokemon name! <:shiqiang:806352561900224533>")
+        console.log(command)
+        fs.appendFile('commands.txt', "\n", (error) => {
+          if(error) throw err;
+        })
+        fs.appendFile('commands.txt', command.toString(), (error) => {
+          if(error) throw err;   
+        })
+        fs.appendFile('commands.txt', "\n", (error) => {
+          if(error) throw err;
+        })
       }
       else if (title.substring(title.length - 32) == "A new wild pokémon has appeared!"){
         message.channel.send("Try sending p!h to get pokemon name! <:shiqiang:806352561900224533>")
-      }
+        console.log(command) 
+        fs.appendFile('commands.txt', "\n", (error) => {
+          if(error) throw err;
+        })
+        fs.appendFile('commands.txt', command.toString(), (error) => {
+          if(error) throw err;   
+        })
+        fs.appendFile('commands.txt', "\n", (error) => {
+          if(error) throw err;
+        })
+      
+    }
     }
     // Check if hint is given
     else if (message.toString().substring(0, 15) == "The pokémon is "){
@@ -50,13 +73,24 @@ bot.on('message', (message) => {
 
         if (x){
           // send pokemon name to channel
-          message.channel.send(c)
+          var command = ["p!c ".concat(c), message.channel.id]
+          console.log(c)
+          fs.appendFile('commands.txt', "\n", (error) => {
+            if(error) throw err;
+          })
+          fs.appendFile('commands.txt', command.toString(), (error) => {
+            if(error) throw err;
+          })
+          fs.appendFile('commands.txt', "\n", (error) => {
+            if(error) throw err;
+          })
         }
       }
     }
   }
   
-})
+}
+)
 
 
 bot.login('TOKEN')
