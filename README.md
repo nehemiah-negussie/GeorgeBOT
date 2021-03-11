@@ -5,6 +5,9 @@
 
 GeorgeBOT is a discord bot made to read discord bot Poketwo's messages and retrieve the pokemon name, saving the name to a file, allowing a Python script to read and send the commands.
 
+WARNING: By using this code, you agree that I (the creator) am not liable in any way, if your discord account gets banned or kicked or has any action taken against it. You understand that this could potentially get your discord account banned and suspended from the Poketwo bot and choose to use the code anyways.
+
+
 ## Requirements
 
 Javascript:
