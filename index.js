@@ -1,26 +1,23 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 const fs = require('fs')
-const prefix = 'h!'
 
-bot.pokemon = require('./pokemon.json')
+bot.pokemon = require('./pokemon.json') 
 
 bot.once('ready', () => {
   console.log('Ready!')
 })
 
 bot.on('message', (message) => {
-  // take only messages from poketwo bot
+  // read only messages from poketwo bot
   if (message.author.id == 716390085896962058){
     // if message has embed
     if (message.embeds[0]){
       var command = ["p!h", message.channel.id]
-      
       var title = message.embeds[0].title
+      
       // check for spawning
       if (title == "A wild pokémon has appeared!"){
-        message.channel.send("Try sending p!h to get pokemon name! <:shiqiang:806352561900224533>")
-        console.log(command)
         fs.appendFile('commands.txt', "\n", (error) => {
           if(error) throw err;
         })
@@ -32,8 +29,6 @@ bot.on('message', (message) => {
         })
       }
       else if (title.substring(title.length - 32) == "A new wild pokémon has appeared!"){
-        message.channel.send("Try sending p!h to get pokemon name! <:shiqiang:806352561900224533>")
-        console.log(command) 
         fs.appendFile('commands.txt', "\n", (error) => {
           if(error) throw err;
         })
@@ -72,7 +67,7 @@ bot.on('message', (message) => {
         }
 
         if (x){
-          // send pokemon name to channel
+          // save pokemon name and channel to file
           var command = ["p!c ".concat(c), message.channel.id]
           console.log(c)
           fs.appendFile('commands.txt', "\n", (error) => {
