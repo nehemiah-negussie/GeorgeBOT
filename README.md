@@ -12,7 +12,7 @@ WARNING: By using this code, you agree that I (the creator) am not liable in any
 
 Javascript:
 - [discord.js] - Node.js module to communicate with Discord API
-- [node.js] - awesome web-based text editor
+- [node.js] - javascript runtime environment and installer
 
 Python 3:
 - [requests] - Send HTTP requests for discord messages
